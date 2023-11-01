@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Your Resume Generator</h1>
+        <p class="text-center">By SoumyaDEV</p>
+
+        <div class="row">
+            <div class="col-md-6">
+                <!-- 1st col - Personal Information -->
+                <h3>Personal Information</h3>
+
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="nameField">Name</label>
+                    <input type="text" id="nameField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <!-- Contact -->
+                <div class="form-group">
+                    <label for="contactField">Contact</label>
+                    <input type="text" id="contactField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <!-- Address -->
+                <div class="form-group mt-2">
+                    <label for="addressField">Your Address</label>
+                    <textarea
+                        id="addressField"
+                        placeholder="Enter your address here"
+                        class="form-control"
+                        rows="5"
+                    ></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="imageField">Select image file</label>
+                    <input id="imgField" type="file" class="form-control">
+                </div>
+
+                <!-- Important Links -->
+                <p class="text-secondary my-2">Important Links</p>
+
+                <!-- Facebook -->
+                <div class="form-group mt-2">
+                    <label for="fbField">Facebook</label>
+                    <input type="text" id="fbField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <!-- Instagram -->
+                <div class="form-group mt-2">
+                    <label for="instaField">Instagram</label>
+                    <input type="text" id="instaField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="form-group mt-2">
+                    <label for="linkedField">LinkedIn</label>
+                    <input type="text" id="linkedField" placeholder="Enter here" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!-- 2nd col - Professional Information -->
+                <h3>Professional Information</h3>
+                
+                <!-- Objective -->
+                <div class="form-group">
+                    <label for="objectiveField">Objective</label>
+                    <textarea
+                        id="objectiveField"
+                        placeholder="Enter your objective here"
+                        class="form-control"
+                    ></textarea>
+                    
+                </div>
+                
+                <!-- Work Experience -->
+                <div class="form-group mt-2 weContainer">
+                    <label for="workExperienceField">Work Experience</label>
+                    <textarea
+                        id="workExperienceField"
+                        placeholder="Enter your work experience here"
+                        class="form-control weField"
+                        rows="5"
+                    ></textarea>
+                    <div class="container text-center mt-2">
+                        <button class="btn btn-primary btn-sm" onclick="addNewWeField()">Add</button>
+                    </div>
+                </div>
+                
+                <!-- Educational Qualification -->
+                <div class="form-group eqContainer">
+                    <label for="educationField">Educational Qualification</label>
+                    <textarea
+                        id="educationField"
+                        placeholder="Enter your educational qualification here"
+                        class="form-control eqField"
+                        rows="5"
+                    ></textarea>
+                    <div class="container text-center mt-2">
+                        <button class="btn btn-primary btn-sm" onclick="addNewAQfield()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center my-3">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">
+                Generate CV
+            </button>
+        </div>
+        <h1 class="text-center my-2 preview-heading">Preview</h1>
+    </div>
+     
+    <!-- CV template -->
+    <div class="container" id="cv-template">
+        <div class="row">
+            <!-- First col -->
+            <div class="col-md-4 text-center py-5 background">
+                <img src="https://img.freepik.com/premium-vector/social-media-user-profile-icon-video-call-screen_97886-10046.jpg?w=2000" alt="Profile Picture" class="img-fluid myimg" id="imgTemplate"/>
+                <div class="container">
+                    <p id="nameT1">XYZ</p>
+                    <p id="contactT">+914542454541, +9154564154</p>
+                    <p id="addressT">563563/4524152 Bangalore, INDIA</p>
+                    <hr>
+                    <p><a id="fbT" href="#1">https://www.facebook.com/soumyaranjan.therock./</a></p>
+                    <p><a id="instaT" href="#1">https://www.instagram.com/anonymous__warior/</a></p>
+                    <p><a id="linkedT" href="#1">https://www.instagram.com/anonymous__warior/</a></p>
+                </div>
+            </div>
+    
+            <!-- Second col -->
+            <div class="col-md-8 py-5 text-center">
+                <h1 id="nameT2" style="font-weight: 980">XYZ</h1>
+    
+                <!-- Objective card -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia aliquam maiores quaerat soluta blanditiis sit!</p>
+                    </div>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>
+                                <h4>Job Title 1</h4>
+                                <p>Company Name 1 | Date Range 1</p>
+                                <p>Description of work experience 1.</p>
+                            </li>
+                            <li>
+                                <h4>Job Title 2</h4>
+                                <p>Company Name 2 | Date Range 2</p>
+                                <p>Description of work experience 2.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Academic Qualifications -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualifications</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>
+                                <h4>Degree 1</h4>
+                                <p>University Name 1 | Graduation Date 1</p>
+                                <p>Description of academic qualification 1.</p>
+                            </li>
+                            <li>
+                                <h4>Degree 2</h4>
+                                <p>University Name 2 | Graduation Date 2</p>
+                                <p>Description of academic qualification 2.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Print button -->
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn btn-print-cv">Print CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

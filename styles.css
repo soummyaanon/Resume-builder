@@ -1,0 +1,186 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #b9551fb0, #b8225bc1, #6fd509c8, #243994);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+}
+
+/* Style the heading */
+h1.text-center {
+    font-size: 48px;
+    color: #ff6f61;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the author text */
+p.text-center {
+    font-size: 24px;
+    color: #0ce2ed;
+    margin-top: 15px;
+    transform: rotate(-3deg);
+}
+
+/* Circular profile picture */
+.myimg {
+    border-radius: 50%;
+    width: 200px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient background animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Form controls styling */
+.form-control {
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* New hover effect - Gradient border color */
+.form-control:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Animation for form controls */
+@keyframes formControlAnimation {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to form controls */
+.form-control {
+    animation: formControlAnimation 0.5s ease-in-out;
+}
+
+/* Style the "Add" button */
+.btn.btn-primary.btn-sm {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the "Add" button */
+.btn.btn-primary.btn-sm:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Click effect for the "Add" button */
+.btn.btn-primary.btn-sm:active {
+    background-color: #e47915;
+}
+
+/* Style the circular profile picture in the template */
+#cv-template .myimg {
+    border-radius: 30px;
+    width: 200px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the container for personal information in the "Preview" section */
+#cv-template .background {
+    background-color: rgba(34, 148, 235, 0.85);
+    color: white;
+    border-radius: 50px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Style the card with a circular shape */
+.card {
+    border-radius: 50px;
+}
+
+/* Style the HR lines in the "Preview" section */
+#cv-template .background hr {
+    border-color: #007bff;
+    margin: 20px 0;
+    border-width: 1px;
+    filter: blur(2px);
+}
+
+/* Style the "Print CV" button */
+.btn-print-cv {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the "Print CV" button */
+.btn-print-cv:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Style for the "XYZ" name */
+#nameT2 {
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Style the "Preview" heading */
+.preview-heading {
+    background: linear-gradient(45deg, #007bff, #ff0066);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 20px auto;
+    max-width: 80%;
+    animation: pulse 2s infinite;
+}
+
+/* Pulsating animation for the heading */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
